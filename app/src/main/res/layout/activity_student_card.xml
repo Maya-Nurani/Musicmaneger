@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentCardActivity">
+    tools:context=".StudentCardActivity"
+    android:background='@color/light_blue'>
 
     <TextView
         android:id="@+id/Student_name"
-        android:text="% StudentFullName"
+        android:text=" StudentFullName"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -16,9 +17,57 @@
 
 
     <LinearLayout
+        android:id="@+id/title_fields"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacher_name_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teacher name: " />
+
+        <TextView
+            android:id="@+id/musical_instruments_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Musical instruments: " />
+
+        <TextView
+            android:id="@+id/Play_time_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play time on the instruments: " />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/value_fields"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/teacher_name_Value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Matan" />
+
+        <TextView
+            android:id="@+id/musical_instruments_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Drums " />
+
+        <TextView
+            android:id="@+id/Play_time_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" About 2 years " />
+
 
     </LinearLayout>
 
