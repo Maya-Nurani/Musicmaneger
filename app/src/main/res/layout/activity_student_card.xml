@@ -1,83 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudentCardActivity"
-    android:background='@color/light_blue'>
+    android:background='@color/light_blue'
+    android:orientation="vertical"
+    tools:context=".activities.StudentCardActivity">
 
     <TextView
         android:id="@+id/Student_name"
-        android:text=" StudentFullName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" StudentFullName" />
+
+
+     <Button
+         android:id="@+id/back_Button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_gravity="center"
+         android:text="STAM BUTTON"/>
+
+
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        />
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
 
 
-    <LinearLayout
-        android:id="@+id/title_fields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/teacher_name_key"
+        <LinearLayout
+            android:id="@+id/title_fields"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Teacher name: " />
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/musical_instruments_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Musical instruments: " />
+            <TextView
+                android:id="@+id/teacher_name_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Teacher name: " />
 
-        <TextView
-            android:id="@+id/Play_time_key"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Play time on the instruments: " />
+            <TextView
+                android:id="@+id/musical_instruments_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Musical instruments: " />
+
+            <TextView
+                android:id="@+id/Play_time_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play time on the instruments: " />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/value_fields"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/teacher_name_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matan" />
+
+            <TextView
+                android:id="@+id/musical_instruments_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drums " />
+
+            <TextView
+                android:id="@+id/Play_time_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" About 2 years " />
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit details" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/value_fields"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/teacher_name_Value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Matan" />
-
-        <TextView
-            android:id="@+id/musical_instruments_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Drums " />
-
-        <TextView
-            android:id="@+id/Play_time_value"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" About 2 years " />
 
 
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/back_Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:layout_alignParentBottom="true"
-        />
 
 
-</RelativeLayout>
+
+
+
+
+
+</LinearLayout>
