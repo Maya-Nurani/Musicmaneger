@@ -36,7 +36,7 @@ public class StudentCardActivity extends Activity {
 
        ArrayList<Student> studentList = new ArrayList<>();
         Student studentTest = new Student();
-        studentTest.setId(123);
+        studentTest.setId(208);
         studentTest.setFirstName("Maya");
         studentTest.setLastName("Nurani");
         studentTest.setPhoneNumber("052-1212425");
@@ -54,14 +54,21 @@ public class StudentCardActivity extends Activity {
         log.info("print first student: " + studentList.get(0));
 
 
-        TextView teacherName = findViewById(R.id.teacher_name_value);
-        TextView instrument = findViewById(R.id.musical_instruments_value);
-        TextView time = findViewById(R.id.Play_time_value);
+        TextView studentIdValue = findViewById(R.id.student_id_value);
+     //   studentIdValue.setText(studentTest.getId());
 
-       // teacherName.setText(maya.getTeacherName());
-        teacherName.setText(studentList.get(0).getTeacherName());
-        instrument.setText(studentTest.getInstrument());
-        time.setText(studentList.get(0).getTime());
+        TextView studentFirstNameValue = findViewById(R.id.student_first_name_value);
+        studentFirstNameValue.setText(studentTest.getFirstName());
+
+        TextView studentLastNameValue = findViewById(R.id.student_last_name_value);
+        studentLastNameValue.setText(studentTest.getLastName());
+
+        TextView studentPhoneNumberValue = findViewById(R.id.student_phone_number_value);
+        studentPhoneNumberValue.setText(studentTest.getPhoneNumber());
+
+        TextView studentRegistrationDate = findViewById(R.id.registration_date_value);
+        studentRegistrationDate.setText(studentTest.getRegistrationDate().toString());
+
     }
 
 }

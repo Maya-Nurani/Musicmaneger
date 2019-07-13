@@ -7,31 +7,17 @@ public abstract class User
     private String lastName;
     private String phoneNumber;
 
-    //old
-    private String teacherName;
-    private String instrument;
-    private String time;
-
 
     public User(
             Long id,
             String firstName,
             String lastName,
-            String phoneNumber,
-
-            String teacherName,
-            String instrument,
-            String time
+            String phoneNumber
     ){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
-
-        // old will be deleted after refactor on the activities
-        this.teacherName = teacherName;
-        this.instrument = instrument;
-        this.time = time;
     }
 
     public User() {}
@@ -61,16 +47,4 @@ public abstract class User
         return this.phoneNumber;
     }
 
-    // TODO: check if using these methods before delete
-    public String getTeacherName() {
-        return teacherName;
-    }
-
-    public String getInstrument() {
-        return instrument;
-    }
-
-    public String getTime() {
-        return time;
-    }
 }

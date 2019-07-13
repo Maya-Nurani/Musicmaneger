@@ -13,14 +13,9 @@ public class Student extends User {
             String lastName,
             String phoneNumber,
 
-            Date registrationDate,
-
-            // old variables - will be deleted after refactor on the activities
-            String teacherName,
-            String instrument,
-            String time
+            Date registrationDate
     ){
-        super(id, firstName, lastName, phoneNumber, teacherName, instrument, time);
+        super(id, firstName, lastName, phoneNumber);
         this.registrationDate = registrationDate;
     }
 

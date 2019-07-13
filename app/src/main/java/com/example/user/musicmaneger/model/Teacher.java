@@ -6,14 +6,9 @@ public class Teacher extends User {
             Long id,
             String firstName,
             String lastName,
-            String phoneNumber,
-
-            // old variables - will be deleted after refactor on the activities
-            String teacherName,
-            String instrument,
-            String time
+            String phoneNumber
     ){
-        super(id, firstName, lastName, phoneNumber, teacherName, instrument, time);
+        super(id, firstName, lastName, phoneNumber);
     }
     public Teacher(){}
 
