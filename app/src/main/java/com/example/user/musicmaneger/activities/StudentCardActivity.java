@@ -8,10 +8,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.user.musicmaneger.R;
-import com.example.user.musicmaneger.model.Person;
+import com.example.user.musicmaneger.model.Student;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.logging.Logger;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class StudentCardActivity extends Activity {
     public Logger log = Logger.getLogger("log text?");
@@ -31,10 +34,24 @@ public class StudentCardActivity extends Activity {
             }
         });
 
-       ArrayList<Person> studentList = new ArrayList<>();
-        Person maya = new Person("maya", "drums", "226 hours");
-        studentList.add(maya);
-        log.info("0" + studentList.get(0));
+       ArrayList<Student> studentList = new ArrayList<>();
+        Student studentTest = new Student();
+        studentTest.setId(123);
+        studentTest.setFirstName("Maya");
+        studentTest.setLastName("Nurani");
+        studentTest.setPhoneNumber("052-1212425");
+        // set registration date for student
+        String dateValue="01/01/2018";
+        Date sDateReg= null;
+        try {
+            sDateReg = new SimpleDateFormat("dd/mm/yyyy").parse(dateValue);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        studentTest.setRegistrationDate(sDateReg);
+
+        studentList.add(studentTest);
+        log.info("print first student: " + studentList.get(0));
 
 
         TextView teacherName = findViewById(R.id.teacher_name_value);
@@ -43,7 +60,7 @@ public class StudentCardActivity extends Activity {
 
        // teacherName.setText(maya.getTeacherName());
         teacherName.setText(studentList.get(0).getTeacherName());
-        instrument.setText(maya.getInstrument());
+        instrument.setText(studentTest.getInstrument());
         time.setText(studentList.get(0).getTime());
     }
 
