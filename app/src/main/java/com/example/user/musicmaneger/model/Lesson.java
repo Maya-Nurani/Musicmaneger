@@ -4,60 +4,42 @@ import java.util.Date;
 
 public class Lesson {
 
-    private Long id;
-    private Long studentId;
-    private Long teacherId;
-    private Long musicalInstrumentsId;
+    private Long serialNumber;
+    // maybe date not relavent here
     private Date meetingDate;
+    private LessonDetails lessonDetailsId;
+
+  // Create a new object for the details and connect it as a array
+    //  LessonView[] lessonViews;
 
     public Lesson(
-            Long id,
-            Long studentId,
-            Long teacherId,
-            Long musicalInstrumentsId,
-            Date meetingDate
+            Long serialNumber,
+            Date meetingDate,
+            LessonDetails lessonDetailsId
     ){
-        this.id = id;
-        this.studentId = studentId;
-        this.teacherId = teacherId;
-        this.musicalInstrumentsId = musicalInstrumentsId;
+        this.serialNumber = serialNumber;
         this.meetingDate = meetingDate;
+        this.lessonDetailsId = lessonDetailsId;
     }
 
     public Lesson() {}
 
-    public void setId (long id){
-        this.id = id;
+    public void setSerialNumber (long serialNumber){
+        this.serialNumber = serialNumber;
     }
-    public long getId (){
-        return this.id;
+    public long getserialNumber (){
+        return this.serialNumber;
     }
-
-    public void setStudentId (long studentId){
-        this.studentId = studentId;
-    }
-    public long getStudentId (){
-        return this.studentId;
-    }
-
-    public void setTeacherId (long teacherId){
-        this.teacherId = teacherId;
-    }
-    public long getTeacherId (){
-        return this.teacherId;
-    }
-
-    public void setMusicalInstrumentsId (long musicalInstrumentsId){
-        this.musicalInstrumentsId = musicalInstrumentsId;
-    }
-    public long getMusicalInstrumentsId (){
-        return this.musicalInstrumentsId;
-    }
-
     public void setMeetingDate (Date meetingDate){
         this.meetingDate = meetingDate;
     }
     public Date getMeetingDate (){
         return this.meetingDate;
+    }
+    public void setLessonDetailsId(LessonDetails lessonDetailsId){
+        this.lessonDetailsId = lessonDetailsId;
+    }
+    public LessonDetails getLessonDetailsId (){
+        return this.lessonDetailsId;
     }
 }
