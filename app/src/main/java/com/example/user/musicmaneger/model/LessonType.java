@@ -3,19 +3,21 @@ package com.example.user.musicmaneger.model;
 public class LessonType {
 
     private Long id;
-    private Long studentId;
-    private Long teacherId;
+//    private Long teacherId;
+    private String teacherName;
     private Long musicalInstrumentsId;
+
+
 
     public LessonType(
             Long id,
-            Long studentId,
-            Long teacherId,
+            // Long teacherId,
+            String teacherName,
             Long musicalInstrumentsId
     ){
         this.id = id;
-        this.studentId = studentId;
-        this.teacherId = teacherId;
+     //   this.teacherId = teacherId;
+        this.teacherName = teacherName;
         this.musicalInstrumentsId = musicalInstrumentsId;
     }
 
@@ -28,18 +30,18 @@ public class LessonType {
         return this.id;
     }
 
-    public void setStudentId (long studentId){
-        this.studentId = studentId;
-    }
-    public long getStudentId (){
-        return this.studentId;
-    }
+//    public void setTeacherId (long teacherId){
+//        this.teacherId = teacherId;
+//    }
+//    public long getTeacherId (){
+//        return this.teacherId;
+//    }
 
-    public void setTeacherId (long teacherId){
-        this.teacherId = teacherId;
+        public void setTeacherName (String teacherName){
+        this.teacherName = teacherName;
     }
-    public long getTeacherId (){
-        return this.teacherId;
+    public String getTeacherName (){
+        return this.teacherName;
     }
 
     public void setMusicalInstrumentsId (long musicalInstrumentsId){
@@ -47,5 +49,14 @@ public class LessonType {
     }
     public long getMusicalInstrumentsId (){
         return this.musicalInstrumentsId;
+    }
+
+    @Override
+    public String toString() {
+        return "LessonType{" +
+                "id=" + id +
+                ", teacherId=" + teacherName +
+                ", musicalInstrumentsId=" + musicalInstrumentsId +
+                '}';
     }
 }
