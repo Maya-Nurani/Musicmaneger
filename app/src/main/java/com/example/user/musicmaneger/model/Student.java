@@ -1,10 +1,20 @@
 package com.example.user.musicmaneger.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Student extends User {
 
     private Date registrationDate;
+    private ArrayList<LessonType> lessonsTypes = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "registrationDate=" + registrationDate +
+                ", lessonsTypes=" + lessonsTypes +
+                '}';
+    }
 
 
     public Student(
@@ -12,11 +22,13 @@ public class Student extends User {
             String firstName,
             String lastName,
             String phoneNumber,
+            ArrayList<LessonType> lessonsTypes,
 
             Date registrationDate
     ){
         super(id, firstName, lastName, phoneNumber);
         this.registrationDate = registrationDate;
+        this.lessonsTypes = lessonsTypes;
     }
 
     public Student(){}
@@ -28,5 +40,11 @@ public class Student extends User {
         return this.registrationDate;
     }
 
+    public void setLessonsTypes (ArrayList<LessonType> lessonsTypes){
+        this.lessonsTypes = lessonsTypes;
+    }
+    public  ArrayList<LessonType> getLessonsTypes () {
+        return this.lessonsTypes;
+    }
 
 }
