@@ -121,6 +121,19 @@
                 android:layout_height="wrap_content"
                 android:text="view lessons" />
 
+            <TextView
+                android:id="@+id/registeredLesson"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text=" registered lesson for the student:" />
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="15"
+                android:id="@+id/lessonTypes"
+                ></ListView>
         </LinearLayout>
 
     </LinearLayout>

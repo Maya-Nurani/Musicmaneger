@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.user.musicmaneger.R;
+import com.example.user.musicmaneger.adapter.LessonsTypeAdapter;
 import com.example.user.musicmaneger.data.basicData;
 import com.example.user.musicmaneger.helper.Constants;
 import com.example.user.musicmaneger.model.LessonType;
@@ -23,7 +24,8 @@ import java.text.SimpleDateFormat;
 public class StudentCardActivity extends Activity {
     public Logger log = Logger.getLogger("log text?");
     private ListView lessonsTypeView;
-    private ArrayAdapter lessonsTypeAdapter;
+   // private ArrayAdapter lessonsTypeAdapter;
+//  private LessonsTypeAdapter lessonsTypeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,20 +67,17 @@ public class StudentCardActivity extends Activity {
         studentRegistrationDate.setText(basicData.getStudent().getRegistrationDate().toString());
 
 
-        List<LessonType> lessonTypesForStudent = new ArrayList<>();
-        lessonTypesForStudent = basicData.getStudent().getLessonsTypes();
-     //basicData.getStudent().setLessonsTypes(lessonTypesForStudent);
+        ArrayList<LessonType> lessonTypesForStudent = basicData.getStudent().getLessonsTypes();
+        log.info("print list of types: " + lessonTypesForStudent);
 
 
-        log.info("print list of types: " + lessonTypesForStudent.get(0).toString());
-        //log.info("print list of types: " + studentList.getLessonsTypes().get(0).toString());
+        log.info("print musicalInstruments: " + Constants.getHmapType().get(2));
 
-        log.info(Constants.getHmapType().toString());
         // list of lesson type for a student
         lessonsTypeView = (ListView) findViewById(R.id.lessonTypes);
 
-        lessonsTypeAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lessonTypesForStudent);
-     // ArrayAdapter lessonsTypeAdapter = new ArrayAdapter<String>(this,R.layout.activity_listiew,lessonTypesForStudent.toString());
+       // lessonsTypeAdapter = new ArrayAdapter(this, R.layout.activity_item_view, lessonTypesForStudent);
+        LessonsTypeAdapter lessonsTypeAdapter = new LessonsTypeAdapter(this,R.layout.activity_item_view, lessonTypesForStudent);
 
 
         if(lessonsTypeView != null){
