@@ -6,7 +6,7 @@ import java.util.Date;
 public class Student extends User {
 
     private Date registrationDate;
-    private ArrayList<LessonType> lessonsTypes = new ArrayList<>();
+    private ArrayList<LessonType> lessonsTypes;
 
     @Override
     public String toString() {

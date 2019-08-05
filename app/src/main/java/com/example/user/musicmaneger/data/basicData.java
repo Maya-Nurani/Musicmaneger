@@ -32,9 +32,6 @@ public class basicData {
         lessonTypesForStudent.add(getLessonType(1, "Matan",1));
         lessonTypesForStudent.add(getLessonType(2, "Shira",3));
 
-        // not relevant here, maybe use for listView?
-        // List<String> lessonTypesForStudent = new ArrayList<>();
-
         firstStudent.setLessonsTypes(lessonTypesForStudent);
         return firstStudent;
     }
@@ -45,7 +42,6 @@ public class basicData {
         firstType.setTeacherName(name);
         firstType.setMusicalInstrumentsId(MusicalInstrumentsId);
 
-        //Constants.musicalInstruments.value
         return firstType;
     }
 

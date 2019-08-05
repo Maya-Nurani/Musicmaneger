@@ -1,5 +1,9 @@
 package com.example.user.musicmaneger.model;
 
+import com.example.user.musicmaneger.helper.Constants;
+
+import java.util.HashMap;
+
 public class LessonType {
 
     private Long id;
@@ -59,4 +63,14 @@ public class LessonType {
                 ", musicalInstrumentsId=" + musicalInstrumentsId +
                 '}';
     }
+
+
+        public String getMusicalInstrumentsName (int key){
+            HashMap<Integer, String> musicalInstruments = Constants.getHmapType();
+
+        return musicalInstruments.get(key);
+
+    }
+
+
 }
