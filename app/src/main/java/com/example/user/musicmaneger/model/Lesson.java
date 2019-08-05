@@ -5,9 +5,10 @@ import java.util.Date;
 public class Lesson {
 
     private Long serialNumber;
-    // maybe date not relavent here
+    // maybe date not relevant here
     private Date meetingDate;
-    private LessonDetails lessonDetailsId;
+    private LessonDetails lessonDetails;
+
 
   // Create a new object for the details and connect it as a array
     //  LessonView[] lessonViews;
@@ -19,7 +20,7 @@ public class Lesson {
     ){
         this.serialNumber = serialNumber;
         this.meetingDate = meetingDate;
-        this.lessonDetailsId = lessonDetailsId;
+        this.lessonDetails = lessonDetailsId;
     }
 
     public Lesson() {}
@@ -36,10 +37,10 @@ public class Lesson {
     public Date getMeetingDate (){
         return this.meetingDate;
     }
-    public void setLessonDetailsId(LessonDetails lessonDetailsId){
-        this.lessonDetailsId = lessonDetailsId;
+    public void setLessonDetails(LessonDetails lessonDetails){
+        this.lessonDetails = lessonDetails;
     }
-    public LessonDetails getLessonDetailsId (){
-        return this.lessonDetailsId;
+    public LessonDetails getLessonDetails(){
+        return this.lessonDetails;
     }
 }
