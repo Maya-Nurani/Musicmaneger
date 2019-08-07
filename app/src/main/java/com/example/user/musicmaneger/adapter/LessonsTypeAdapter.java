@@ -30,17 +30,28 @@ private  ArrayList<LessonType> types;
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View row = layoutInflater.inflate(rowLayout, parent, false);
+        Holder holder;
+        View row = convertView;
 
-        TextView musicalInstruments = row.findViewById(R.id.musicalInstruments);
-        TextView teacherName = row.findViewById(R.id.teacher);
+        if (convertView == null){
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
+        row = layoutInflater.inflate(rowLayout, parent, false);
+
+        holder = new Holder();
+
+        holder.musicalInstruments = row.findViewById(R.id.musicalInstruments);
+        holder.teacherName = row.findViewById(R.id.teacher);
+
+        row.setTag(holder);
+        } else {
+            holder = (Holder) row.getTag();
+        }
 
         LessonType lessonType = types.get(position);
 
         int musicalInstrumentsId = (int) lessonType.getMusicalInstrumentsId();
-        musicalInstruments.setText(lessonType.getMusicalInstrumentsName(musicalInstrumentsId));
-        teacherName.setText(lessonType.getTeacherName());
+        holder.musicalInstruments.setText(lessonType.getMusicalInstrumentsName(musicalInstrumentsId));
+        holder.teacherName.setText(lessonType.getTeacherName());
 
         return row;
     }
@@ -52,6 +63,11 @@ private  ArrayList<LessonType> types;
         } else {
             return types.size();
         }
+    }
+
+    public static class Holder {
+        TextView musicalInstruments;
+        TextView teacherName;
     }
 
 
