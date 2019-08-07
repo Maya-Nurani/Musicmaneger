@@ -29,8 +29,8 @@ public class MainActivity extends Activity {
             }
         });
 
-        Button card = findViewById(R.id.student_card_trigger);
-        card.setOnClickListener(new View.OnClickListener() {
+        Button openStudentCard = findViewById(R.id.student_card_trigger);
+        openStudentCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO: add popup that asking the student name\id and then we know wich student card to open

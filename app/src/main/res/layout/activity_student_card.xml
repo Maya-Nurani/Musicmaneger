@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text=" StudentFullName" />
+        android:textSize="40px"
+        android:text=" Student card" />
 
 
      <Button
@@ -108,12 +109,12 @@
                 android:layout_height="wrap_content"
                 android:text="studentRegistrationDate" />
 
-            <Button
-                android:id="@+id/edit_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="Edit details" />
+            <!--<Button-->
+                <!--android:id="@+id/edit_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:text="Edit details" />-->
 
             <Button
                 android:id="@+id/navigation_to_lessons_view"
@@ -126,13 +127,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
+                android:textSize="40px"
                 android:text=" registered lesson for the student:" />
 
             <ListView
+                android:id="@+id/lesson_types_list_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="15"
-                android:id="@+id/lessonTypes"
                 ></ListView>
         </LinearLayout>
 
