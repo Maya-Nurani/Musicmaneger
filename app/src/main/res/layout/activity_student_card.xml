@@ -4,8 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background='@color/light_blue'
+    android:background='#4db6ac'
     android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:paddingEnd="16dp"
     tools:context=".activities.StudentCardActivity">
 
     <TextView
@@ -17,17 +21,17 @@
         android:text=" Student card" />
 
 
-     <Button
-         android:id="@+id/back_Button"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_gravity="center"
-         android:text="Back to home page"/>
+    <Button
+        android:id="@+id/back_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Back to home page" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:orientation="horizontal">
 
@@ -35,7 +39,7 @@
         <LinearLayout
             android:id="@+id/title_fields"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:orientation="vertical">
 
@@ -73,8 +77,8 @@
 
         <LinearLayout
             android:id="@+id/value_fields"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:orientation="vertical">
 
@@ -109,35 +113,38 @@
                 android:layout_height="wrap_content"
                 android:text="studentRegistrationDate" />
 
-            <!--<Button-->
-                <!--android:id="@+id/edit_button"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="right"-->
-                <!--android:text="Edit details" />-->
-
             <Button
-                android:id="@+id/navigation_to_lessons_view"
+                android:id="@+id/edit_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="view lessons" />
+                android:layout_gravity="right"
+                android:text="Edit details" />
 
-            <TextView
-                android:id="@+id/registeredLesson"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:textSize="40px"
-                android:text=" registered lesson for the student:" />
-
-            <ListView
-                android:id="@+id/lesson_types_list_view"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="15"
-                ></ListView>
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/registeredLesson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingRight="16dp"
+            android:text=" registered lesson for the student:"
+            android:textSize="40px" />
+
+
+        <ListView
+            android:id="@+id/lesson_types_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="15"></ListView>
     </LinearLayout>
 
 

@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background='#4db6ac'
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:paddingEnd="16dp"
+    tools:context=".activities.LessonsListPerTypeActivity"
+    >
 
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/registeredLesson"
@@ -17,10 +27,11 @@
             android:textSize="50px"
             android:text=" All lessons" />
 
-        <ListView
-            android:id="@+id/listLessonsPerType"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+        <!--<ListView-->
+            <!--android:id="@+id/listLessonsPerType"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="10dp" />-->
 
     </LinearLayout>
 
