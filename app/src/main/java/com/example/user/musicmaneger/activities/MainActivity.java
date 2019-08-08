@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.user.musicmaneger.R;
 
@@ -19,15 +18,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // NOTE: About to wire up the buttons
-        Button button2 = findViewById(R.id.seconed_button);
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                log.info("toast display after click on button");
-                Toast.makeText(getApplicationContext(), "I did something!", Toast.LENGTH_LONG).show();
-            }
-        });
 
         Button openStudentCard = findViewById(R.id.student_card_trigger);
         openStudentCard.setOnClickListener(new View.OnClickListener() {
@@ -40,10 +30,6 @@ public class MainActivity extends Activity {
 
             }
         });
-
-
-
-
 
 
 /*    protected void onStart (Bundle savedInstanceState){
