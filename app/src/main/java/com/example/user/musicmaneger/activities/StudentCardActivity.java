@@ -4,10 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 import com.example.user.musicmaneger.R;
 import com.example.user.musicmaneger.adapter.LessonsTypeAdapter;
@@ -22,10 +26,9 @@ import java.util.logging.Logger;
 import java.text.SimpleDateFormat;
 
 public class StudentCardActivity extends Activity {
-    public Logger log = Logger.getLogger("log text?");
+    public Logger log = Logger.getLogger("log text");
     private ListView lessonsTypeView;
-   // private ArrayAdapter lessonsTypeAdapter;
-//  private LessonsTypeAdapter lessonsTypeAdapter;
+    private ArrayAdapter lessonsTypeAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class StudentCardActivity extends Activity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                log.info("Trigger to student card");
+                log.info("Trigger back to previous activity - home page");
                 Intent intent = new Intent(StudentCardActivity.this, MainActivity.class);
                 startActivity(intent);
             }
@@ -50,9 +53,9 @@ public class StudentCardActivity extends Activity {
         log.info("print first student: " + studentList.get(0).toString());
 
         // TODO export insert student to textview in a method out of the class
-      // TODO student id should not visible for the user
+        // TODO student id should not visible for the user
         TextView studentIdValue = findViewById(R.id.student_id_value);
-     //   studentIdValue.setText(basicData.getStudent().getId());
+        //   studentIdValue.setText(basicData.getStudent().getId());
 
         TextView studentFirstNameValue = findViewById(R.id.student_first_name_value);
         studentFirstNameValue.setText(basicData.getStudent().getFirstName());
@@ -66,6 +69,15 @@ public class StudentCardActivity extends Activity {
         TextView studentRegistrationDate = findViewById(R.id.registration_date_value);
         studentRegistrationDate.setText(basicData.getStudent().getRegistrationDate().toString());
 
+//         NOTE: About to wire up the buttons
+        Button editButton = findViewById(R.id.edit_button);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                log.info("Button for edit student details, not working yet");
+                Toast.makeText(getApplicationContext(), "Sorry this button currently not working", Toast.LENGTH_LONG).show();
+            }
+        });
 
         ArrayList<LessonType> lessonTypesForStudent = basicData.getStudent().getLessonsTypes();
         log.info("print list of types: " + lessonTypesForStudent);
@@ -74,17 +86,31 @@ public class StudentCardActivity extends Activity {
         log.info("print musicalInstruments: " + Constants.getHmapType().get(2));
 
         // list of lesson type for a student
-        lessonsTypeView = (ListView) findViewById(R.id.lessonTypes);
-
-       // lessonsTypeAdapter = new ArrayAdapter(this, R.layout.activity_item_view, lessonTypesForStudent);
-        LessonsTypeAdapter lessonsTypeAdapter = new LessonsTypeAdapter(this,R.layout.activity_item_view, lessonTypesForStudent);
+        lessonsTypeView = findViewById(R.id.lesson_types_list_view);
+       // lessonsTypeView = (ListView) findViewById(R.id.lesson_types_list_view);
 
 
-        if(lessonsTypeView != null){
+        // lessonsTypeAdapter = new ArrayAdapter(this, R.layout.activity_item_view, lessonTypesForStudent);
+        lessonsTypeAdapter = new LessonsTypeAdapter(this,R.layout.activity_item_view, lessonTypesForStudent);
+
+
+        if (lessonsTypeView != null) {
             lessonsTypeView.setAdapter(lessonsTypeAdapter);
         }
 
+        lessonsTypeView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Button item = findViewById(R.id.student_card_trigger);
+//                item.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
 
+                        Intent intent = new Intent(view.getContext(), LessonsListPerTypeActivity.class);
+                      //   intent.putExtra("Lesson type position", lessonsTypeView.getItemAtPosition(position).toString());
+                        startActivity(intent);
+                    }
+                });
+            }
+     //   });
     }
-
-}

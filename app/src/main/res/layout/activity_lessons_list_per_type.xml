@@ -18,6 +18,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <Button
+            android:id="@+id/back_Button"
+            android:layout_width="70dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:text="Back"
+            android:textSize="25px" />
 
         <TextView
             android:id="@+id/registeredLesson"
@@ -27,11 +34,11 @@
             android:textSize="50px"
             android:text=" All lessons" />
 
-        <!--<ListView-->
-            <!--android:id="@+id/listLessonsPerType"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginTop="10dp" />-->
+        <ListView
+            android:id="@+id/listLessonsPerType"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 
