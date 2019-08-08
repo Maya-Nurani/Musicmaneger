@@ -19,6 +19,10 @@
             android:name=".activities.StudentCardActivity"
             android:label="@string/title_activity_student_card">
         </activity>
+        <activity
+            android:name=".activities.LessonsListPerTypeActivity"
+            android:label="@string/title_activity_student_card">
+        </activity>
     </application>
 
 </manifest>
