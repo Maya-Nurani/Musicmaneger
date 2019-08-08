@@ -30,8 +30,9 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="Hello student!"
-            android:textSize="50px" />
+            android:textStyle="bold"
+            android:textSize="55px"
+            android:text="Hello student!" />
 
 
         <Button

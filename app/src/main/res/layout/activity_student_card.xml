@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:textSize="50px"
+        android:textStyle="bold"
         android:text=" Student card" />
 
 
@@ -135,12 +136,15 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:paddingRight="16dp"
-            android:text=" Types of lessons for the student:"
-            android:textSize="40px" />
+            android:textSize="40px"
+            android:textStyle="bold"
+            android:text=" Types of lessons for the student:"/>
 
 
         <ListView
             android:id="@+id/lesson_types_list_view"
+            android:dividerHeight="2dp"
+            android:divider="@color/black"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"

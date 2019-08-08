@@ -30,6 +30,7 @@ public class basicData {
         // Insert lessons type for student
         ArrayList<LessonType> lessonTypesForStudent = new ArrayList<>();
         lessonTypesForStudent.add(getLessonType(1, "Matan",1));
+        lessonTypesForStudent.add(getLessonType(2, "Doron",3));
         lessonTypesForStudent.add(getLessonType(2, "Shira",3));
 
         firstStudent.setLessonsTypes(lessonTypesForStudent);
